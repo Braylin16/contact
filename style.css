@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #eee;
+}
+
+article {
+    width: 70%;
+    margin-bottom: 120px;
+}
+
+form {
+   float: right;
+   background-color: #fff;
+   border-radius: 3px;
+   border: 1px solid gainsboro;
+   padding: 20px 10px;
+   width: 50%;
+
+}
+
+h1 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+input {
+    width: 96%;
+    padding: 12px 8px;
+    margin: 5px 0px;
+    border-radius: 3px;
+    border: 2px solid rgb(109, 184, 235);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus {
+    border: 3px solid rgb(78, 135, 201);
+}
+
+textarea {
+    max-width: 96%;
+    min-width: 96%;
+    max-height: 70px;
+    min-height: 70px;
+    padding: 8px 8px;
+    border-radius: 2px;
+    border: 2px solid rgb(109, 184, 235);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea:focus {
+    border: 3px solid rgb(78, 135, 201);
+}
+
+button {
+    background-color: rgb(44, 160, 15);
+    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    margin: 8px 0px;
+    float: right;
+    border-style: none;
+    border-radius: 3px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4CAF50;
+}
+
+.error {
+    color: #a94442;
+}
+
+.exito {
+    color: #197e05;
+    font-size: 1.3rem;
+}
