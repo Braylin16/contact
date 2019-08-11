@@ -4,7 +4,7 @@
 require_once 'conexion.php';
 
 // Requiere el codigo del index.php
-require_once 'vista.php';
+require_once 'backend.php';
 
 ?>
 
@@ -27,7 +27,7 @@ require_once 'vista.php';
             <h1>Formulario de contacto</h1>
             <input type="text" id="name" name="name" placeholder="Nombre completo" autocomplete="off" value="<?php if(isset($_POST["name"])){ echo $name; } ?>"><br>
             <input type="text" id="email" name="email" placeholder="Correo electr&oacute;nico" autocomplete="off" value="<?php if(isset($_POST["email"])){ echo $email; } ?>"><br>
-            <textarea name="messege" id="messege" placeholder="Comunicado" autocomplete="off"><?php if(isset($_POST["messege"])){ echo $messege; } ?></textarea><br>
+            <textarea name="messege" id="messege" placeholder="Comunicado" autocomplete="off" maxlength="65000"><?php if(isset($_POST["messege"])){ echo $messege; } ?></textarea><br>
             <button type="submit" name="submit">Contactar</button>
             <!-- Mensaje de error -->
             <div class="danger">

@@ -36,10 +36,11 @@ if(isset($_POST['submit'])){
         $error .= "*Este no es un correo electronico <br/>";
     }
 
+    // Verificar que el campo mensaje no este vacio, y que sea tipo string
     if(!empty($messege)){
         $messege = trim($messege);
         $messege = htmlspecialchars($messege);
-        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $messege = filter_var($messege, FILTER_SANITIZE_STRING);
     }else{
         $error .= "*Coloca un mensaje";
     }
@@ -50,7 +51,7 @@ if(isset($_POST['submit'])){
     }
 
     // Guardar la informacion en la base de datos
-    if(!$email == false){
+    if(!$exito == false){
         $mysqli->query("INSERT INTO `contact` (`id`, `name`, `email`, `messege`) VALUES (NULL, '$name', '$email', '$messege');");
     }
 
