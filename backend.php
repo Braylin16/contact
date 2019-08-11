@@ -48,6 +48,7 @@ if(isset($_POST['submit'])){
     // Verificar que todos los campos estan completos
     if(!empty($name) and !empty($email) and !empty($messege)){
         $exito = "El mensaje fue enviado con exito";
+        header("Refresh:5; url=index.php");
     }
 
     // Guardar la informacion en la base de datos
