@@ -1,14 +1,17 @@
 <?php
 
+// Requiriendo la conexion a la base de datos
+require_once 'conexion.php';
+
 // Mensajes
 $error = "";
 $exito = "";
 
 // Recogiendo los datos que me estan llegando
-if(isset($_POST['submit'])){
+if(isset($_POST['nom'])){
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
+    $name = $_POST["nom"];
+    $email = $_POST["ema"];
     $messege = $_POST["messege"];
 
     // Verificando que esta llegando el nombre, y limpiando que sea un string
@@ -48,12 +51,22 @@ if(isset($_POST['submit'])){
     // Verificar que todos los campos estan completos
     if(!empty($name) and !empty($email) and !empty($messege)){
         $exito = "El mensaje fue enviado con exito";
-        header("Refresh:5; url=index.php");
+        // header("Refresh:5; url=index.php");
     }
 
     // Guardar la informacion en la base de datos
     if(!$exito == false){
-        $mysqli->query("INSERT INTO `contact` (`id`, `name`, `email`, `messege`) VALUES (NULL, '$name', '$email', '$messege');");
+		
+		$statement = $conexion->prepare('INSERT INTO contact (id, name, email, messege) VALUES(
+            null, :name, :email, :messege)'
+        );
+        $statement->execute(array(
+            ':name' => $name,
+            ':email' => $email,
+            ':messege' => $messege,
+        ));
+
+        echo 'Tu mensage se ha enviado con éxito, pronto nos pondremos en contacto contigo';
     }
 
 }
